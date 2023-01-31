@@ -5,8 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo List created by js</title>
+  <script src="./script.js" defer></script>
 </head>
 <body>
-  
+  <main class="wrap">
+    <h1>Your Todo's</h1>
+    <div class="container">
+      <input type="text" id="todoInput" class="todo_input" onkeydown="keyCode();" />
+      <ul id="todoList" class="todo_list"></ul>
+    </div>
+  </main>
 </body>
 </html>
