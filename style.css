@@ -45,6 +45,18 @@ li {
 
 .todo_list li {
   margin-bottom: 5px;
+  color: #aaa;
+  font-size: 1.2rem;
+}
+
+.todo_list li::before {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border: 2px solid #aaa;
+  border-radius: 50%;
+  content: '';
 }
 
 .todo_list li:last-child {
