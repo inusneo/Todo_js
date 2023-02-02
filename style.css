@@ -12,7 +12,11 @@ body {
   background-color: #E3E9FF;
 }
 
-input {
+input[type=checkbox] {
+  margin-right: 5px;
+}
+
+.todo_input {
   border: none;
   appearance: none;
   width: 100%;
@@ -38,26 +42,18 @@ li {
 }
 
 .todo_list {
-  background-color: #fff;
   border-top: 1px solid #eee;
 }
 
 .todo_list li {
   margin-bottom: 5px;
-  color: #aaa;
+  color: #333;
   font-size: 1.2rem;
 }
 
-.todo_list li::before {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin-right: 8px;
-  border: 2px solid #aaa;
-  border-radius: 50%;
-  content: '';
+.todo_list li:first-child {
+  margin-top: 5px;
 }
-
 .todo_list li:last-child {
   margin-bottom: 0;
 }
