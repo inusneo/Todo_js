@@ -14,6 +14,7 @@ body {
 
 input[type=checkbox] {
   margin-right: 5px;
+  cursor: pointer;
 }
 
 .todo_input {
@@ -50,10 +51,14 @@ li {
   color: #333;
   font-size: 1.2rem;
 }
-
 .todo_list li:first-child {
   margin-top: 5px;
 }
 .todo_list li:last-child {
   margin-bottom: 0;
+}
+
+.todo_list li.complete {
+  color: #999;
+  text-decoration: line-through;
 }

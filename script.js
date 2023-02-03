@@ -7,7 +7,9 @@ const createTodo = () => {
   const addChk = document.createElement('input');
   addChk.setAttribute('type', 'checkbox');
 
-
+  addChk.addEventListener('click', () => {
+    addLi.classList.toggle('complete');
+  });
   addSpan.textContent = todoInput.value;
   addLi.appendChild(addChk);
   addLi.appendChild(addSpan);
