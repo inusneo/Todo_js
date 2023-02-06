@@ -38,8 +38,11 @@ const delAll = () => {
 const saveList = () => {
   const saveItems = [];
   for (let i = 0; i < todoList.children.length; i++) {
-    const todo = todoList.children[i].querySelector('span').textContent;
-    saveItems.push(todo);
+    const todoObj = {
+      contents : todoList.children[i].querySelector('span').textContent,
+      complete : todoList.children[i].classList.contains('complete'),
+    }
+    saveItems.push(todoObj);
   }
   console.log(saveItems);
 }
