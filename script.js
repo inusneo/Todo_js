@@ -1,7 +1,14 @@
 const todoInput = document.querySelector('#todoInput');
 const todoList = document.querySelector('#todoList');
 
-const createTodo = () => {
+const savedTodoList = JSON.parse(localStorage.getItem('saved-items'));
+
+const createTodo = (storageData) => {
+  let todoCont = todoInput.value;
+  if (storageData) {
+    todoCont = storageData.contents;
+  }
+
   const addLi = document.createElement('li');
   const addSpan = document.createElement('span');
   const addChk = document.createElement('input');
@@ -13,9 +20,14 @@ const createTodo = () => {
   });
   addLi.addEventListener('dblclick', () => {
     addLi.remove();
+    saveList();
   });
 
-  addSpan.textContent = todoInput.value;
+  if (storageData?.complete) {
+    addLi.classList.add('complete');
+  }
+
+  addSpan.textContent = todoCont;
   addLi.appendChild(addChk);
   addLi.appendChild(addSpan);
   todoList.appendChild(addLi);
@@ -47,4 +59,10 @@ const saveList = () => {
   }
   localStorage.setItem('saved-items', JSON.stringify(saveItems));
   console.log(saveItems);
+}
+
+if (savedTodoList) {
+  for (let i = 0 ; i < savedTodoList.length; i++) {
+    createTodo(savedTodoList[i]);
+  }
 }
