@@ -9,6 +9,7 @@ const createTodo = () => {
 
   addChk.addEventListener('click', () => {
     addLi.classList.toggle('complete');
+    saveList();
   });
   addLi.addEventListener('dblclick', () => {
     addLi.remove();
@@ -44,5 +45,6 @@ const saveList = () => {
     }
     saveItems.push(todoObj);
   }
+  localStorage.setItem('saved-items', JSON.stringify(saveItems));
   console.log(saveItems);
 }
