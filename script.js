@@ -1,7 +1,7 @@
 const todoInput = document.querySelector('#todoInput');
+const todoList = document.querySelector('#todoList');
 
 const createTodo = () => {
-  const todoList = document.querySelector('#todoList');
   const addLi = document.createElement('li');
   const addSpan = document.createElement('span');
   const addChk = document.createElement('input');
@@ -19,6 +19,7 @@ const createTodo = () => {
   addLi.appendChild(addSpan);
   todoList.appendChild(addLi);
   todoInput.value = '';
+  saveList();
 }
 
 const keyCodeChk = () => {
@@ -32,4 +33,13 @@ const delAll = () => {
   for (let idx of liList) {
     idx.remove();
   }
+}
+
+const saveList = () => {
+  const saveItems = [];
+  for (let i = 0; i < todoList.children.length; i++) {
+    const todo = todoList.children[i].querySelector('span').textContent;
+    saveItems.push(todo);
+  }
+  console.log(saveItems);
 }
