@@ -30,9 +30,9 @@ Demo Link ⇒ https://inusneo.github.io/Todo_js/
 
 ## 4. 프로젝트를 통해 배운 점
 
-    - 
-
-## 5. 개선할 점
-
-    -
+    - Promise 객체 다루는 법
+    - 구조분해할당의 이해
+    - 깊은 복사, 얕은 복사의 이해
+    - Geolocation API 사용법
+    - OpenWeatherMap 사용법 
         
