@@ -46,6 +46,7 @@ const delAll = () => {
   for (let idx of liList) {
     idx.remove();
   }
+  saveList();
 }
 
 const saveList = () => {
@@ -57,8 +58,14 @@ const saveList = () => {
     }
     saveItems.push(todoObj);
   }
-  localStorage.setItem('saved-items', JSON.stringify(saveItems));
-  console.log(saveItems);
+
+  saveItems.length === 0 ? localStorage.removeItem('saved-items') : localStorage.setItem('saved-items', JSON.stringify(saveItems))
+
+  // if (saveItems.length === 0) {
+  //   localStorage.removeItem('saved-items');
+  // } else {
+  //   localStorage.setItem('saved-items', JSON.stringify(saveItems));
+  // }
 }
 
 if (savedTodoList) {
